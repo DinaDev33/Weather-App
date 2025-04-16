@@ -1,3 +1,16 @@
+let text = "METEO"
+let i = 0;
+let speed = 200;
+
+ function type() {
+    if (i < text.length) {
+    document.querySelector("#innerText").textContent += text.charAt(i);
+    i++;
+    setTimeout(type, speed)
+ }
+}
+type()
+
 const api = {
     endpoint: "https://api.openweathermap.org/data/2.5/",
     key: "5a4d16aa8f41889e5d08d33b4cb0b4bf"
@@ -23,7 +36,9 @@ displayResult(result);
 }
 
 function displayResult (result){
-  console.log(result);
+  //console.log(result);
+container2.classList.remove("hidden");
+
   let city = document.querySelector("#city");
   city.textContent = `${result.name}, ${result.sys.country}`;
 
@@ -33,7 +48,7 @@ function displayResult (result){
   temperature.innerHTML = `${Math.round(result.main.temp)} <span>°</span>`;
 
   let feelsLike = document.querySelector("#feelsLike");
-  feelsLike.innerHTML = ` <span> Feels like: </span>${Math.round(result.main.feels_like)}<span>°</span>`;
+  feelsLike.innerHTML = ` <span> Ressenti: </span>${Math.round(result.main.feels_like)}<span>°</span>`;
 
   let conditions = document.querySelector ("#conditions");
   //let conditions1 = conditions.toUpperCase();
@@ -49,8 +64,8 @@ function getOurDate(){
   
 const myDate = new Date();
 
-const days = ["Sunday", "Lundi", "Mardi", "Mercredi", "Jeudi", "Friday", "Samedi"];
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Friday", "Samedi"];
+const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"];
 //let date = document.querySelector("#date").textContent = days[myDate.getDay()];
 let day = days[myDate.getDay()];
 console.log (day);
