@@ -1,4 +1,4 @@
-let text = "WEATHER"
+let text = "Today’s Weather"
 let i = 0;
 let speed = 200;
 
@@ -48,7 +48,7 @@ container2.classList.remove("hidden");
   temperature.innerHTML = `${Math.round(result.main.temp)} <span>°</span>`;
 
   let feelsLike = document.querySelector("#feelsLike");
-  feelsLike.innerHTML = ` <span> Ressenti: </span>${Math.round(result.main.feels_like)}<span>°</span>`;
+  feelsLike.innerHTML = ` <span> Feels like: </span>${Math.round(result.main.feels_like)}<span>°</span>`;
 
   let conditions = document.querySelector ("#conditions");
   //let conditions1 = conditions.toUpperCase();
@@ -86,6 +86,7 @@ let showDate = document.querySelector("#date");
 showDate.textContent = `${day}` + " " + `${todayDate}` + " " + `${month}` + " " + `${year}`
 
 }
+
 
 
 
