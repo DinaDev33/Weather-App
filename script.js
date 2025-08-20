@@ -1,4 +1,4 @@
-let text = "METEO"
+let text = "WEATHER"
 let i = 0;
 let speed = 200;
 
@@ -86,5 +86,6 @@ let showDate = document.querySelector("#date");
 showDate.textContent = `${day}` + " " + `${todayDate}` + " " + `${month}` + " " + `${year}`
 
 }
+
 
 
